@@ -1,1 +1,3 @@
-select  jane_smith , "password"  from user  WHERE userName  = "jane_smith";--WHERE userName = jane_smith ;
+select  password = "hell" as res   from user  WHERE userName  = "jane_smith";
+
+
