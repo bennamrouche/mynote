@@ -193,7 +193,7 @@ public class signUp extends javax.swing.JPanel {
 
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel9.setText("Firat Name");
+        jLabel9.setText("UserName");
         jLabel9.setMaximumSize(new java.awt.Dimension(444, 32));
         jLabel9.setMinimumSize(new java.awt.Dimension(0, 32));
         jLabel9.setPreferredSize(new java.awt.Dimension(42, 32));
@@ -284,9 +284,7 @@ public class signUp extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel3Layout.createSequentialGroup()
                                             .addGap(6, 6, 6)
                                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
