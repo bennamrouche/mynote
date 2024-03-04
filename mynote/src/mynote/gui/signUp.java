@@ -1,16 +1,28 @@
 package mynote.gui;
 import mynote.*;
+import mynote.Event.LabelMouseEvent;
 /**
  *
  * @author ebennamr
  */
 public class signUp extends javax.swing.JPanel {
 
-    /**
-     * Creates new form login
-     */
+private  void Setup()
+{
+    LabelMouseEvent even = new LabelMouseEvent(Views.FORGET_PASSWORD);
+    lblForgetPassword.addMouseMotionListener(even);
+    lblForgetPassword.addMouseListener(even);
+    
+    
+      even = new LabelMouseEvent(Views.LOGIN);
+    lblLogin.addMouseMotionListener(even);
+    lblLogin.addMouseListener(even);
+
+    
+}
     public signUp() {
         initComponents();
+        Setup();
     }
 
     /**
@@ -22,29 +34,30 @@ public class signUp extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        GenderGroup = new javax.swing.ButtonGroup();
         leftSide = new javax.swing.JPanel();
         rigthSide = new javax.swing.JPanel();
         mainContianer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblProgramIcon = new javax.swing.JLabel();
+        lblProgramName = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JPasswordField();
+        txtFristName = new javax.swing.JTextField();
+        lblPassword = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
+        lblLogin = new javax.swing.JLabel();
+        lblForgetPassword = new javax.swing.JLabel();
+        lblLastName = new javax.swing.JLabel();
+        txtLastName = new javax.swing.JTextField();
+        lblUserName = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
+        lblFristName = new javax.swing.JLabel();
+        chxFemale = new javax.swing.JCheckBox();
+        chxMale = new javax.swing.JCheckBox();
         jLabel11 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(33, 28, 106));
@@ -98,151 +111,151 @@ public class signUp extends javax.swing.JPanel {
         jLabel3.setMaximumSize(new java.awt.Dimension(100, 0));
         jPanel1.add(jLabel3);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logo.png"))); // NOI18N
-        jPanel1.add(jLabel1);
+        lblProgramIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logo.png"))); // NOI18N
+        jPanel1.add(lblProgramIcon);
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("My Note");
-        jLabel2.setMaximumSize(new java.awt.Dimension(120, 64));
-        jLabel2.setMinimumSize(new java.awt.Dimension(120, 64));
-        jLabel2.setPreferredSize(new java.awt.Dimension(64, 120));
-        jLabel2.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(jLabel2);
+        lblProgramName.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
+        lblProgramName.setForeground(new java.awt.Color(239, 243, 150));
+        lblProgramName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProgramName.setText("My Note");
+        lblProgramName.setMaximumSize(new java.awt.Dimension(120, 64));
+        lblProgramName.setMinimumSize(new java.awt.Dimension(120, 64));
+        lblProgramName.setPreferredSize(new java.awt.Dimension(64, 120));
+        lblProgramName.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(lblProgramName);
 
         mainContianer.add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
         jPanel3.setOpaque(false);
 
-        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel4.setText("Email");
-        jLabel4.setMaximumSize(new java.awt.Dimension(444, 32));
-        jLabel4.setMinimumSize(new java.awt.Dimension(0, 32));
-        jLabel4.setPreferredSize(new java.awt.Dimension(42, 32));
+        lblEmail.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(239, 243, 150));
+        lblEmail.setText("Email");
+        lblEmail.setMaximumSize(new java.awt.Dimension(444, 32));
+        lblEmail.setMinimumSize(new java.awt.Dimension(0, 32));
+        lblEmail.setPreferredSize(new java.awt.Dimension(42, 32));
 
-        jPasswordField1.setBackground(new java.awt.Color(239, 243, 150));
-        jPasswordField1.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
-        jPasswordField1.setForeground(new java.awt.Color(33, 28, 106));
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField1.setText("adimn");
-        jPasswordField1.setMaximumSize(new java.awt.Dimension(2147483647, 40));
-        jPasswordField1.setMinimumSize(new java.awt.Dimension(64, 40));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        txtPassword.setBackground(new java.awt.Color(239, 243, 150));
+        txtPassword.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(33, 28, 106));
+        txtPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPassword.setText("adimn");
+        txtPassword.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        txtPassword.setMinimumSize(new java.awt.Dimension(64, 40));
+        txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                txtPasswordActionPerformed(evt);
             }
         });
 
-        jTextField1.setBackground(new java.awt.Color(239, 243, 150));
-        jTextField1.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(33, 28, 106));
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("mehdi");
-        jTextField1.setMaximumSize(new java.awt.Dimension(2147483647, 40));
-        jTextField1.setMinimumSize(new java.awt.Dimension(0, 40));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtFristName.setBackground(new java.awt.Color(239, 243, 150));
+        txtFristName.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        txtFristName.setForeground(new java.awt.Color(33, 28, 106));
+        txtFristName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFristName.setText("mehdi");
+        txtFristName.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        txtFristName.setMinimumSize(new java.awt.Dimension(0, 40));
+        txtFristName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtFristNameActionPerformed(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel5.setText("Password");
-        jLabel5.setMaximumSize(new java.awt.Dimension(444, 32));
-        jLabel5.setMinimumSize(new java.awt.Dimension(0, 32));
-        jLabel5.setPreferredSize(new java.awt.Dimension(42, 32));
+        lblPassword.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(239, 243, 150));
+        lblPassword.setText("Password");
+        lblPassword.setMaximumSize(new java.awt.Dimension(444, 32));
+        lblPassword.setMinimumSize(new java.awt.Dimension(0, 32));
+        lblPassword.setPreferredSize(new java.awt.Dimension(42, 32));
 
         jButton1.setBackground(new java.awt.Color(239, 243, 150));
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 26)); // NOI18N
         jButton1.setForeground(new java.awt.Color(33, 28, 106));
         jButton1.setText("Log In");
 
-        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Sign Up");
+        lblLogin.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        lblLogin.setForeground(new java.awt.Color(239, 243, 150));
+        lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogin.setText("Log In");
 
-        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Forget Password");
+        lblForgetPassword.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        lblForgetPassword.setForeground(new java.awt.Color(239, 243, 150));
+        lblForgetPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblForgetPassword.setText("Forget Password");
 
-        jLabel8.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel8.setText("Last Name");
-        jLabel8.setMaximumSize(new java.awt.Dimension(444, 32));
-        jLabel8.setMinimumSize(new java.awt.Dimension(0, 32));
-        jLabel8.setPreferredSize(new java.awt.Dimension(42, 32));
+        lblLastName.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        lblLastName.setForeground(new java.awt.Color(239, 243, 150));
+        lblLastName.setText("Last Name");
+        lblLastName.setMaximumSize(new java.awt.Dimension(444, 32));
+        lblLastName.setMinimumSize(new java.awt.Dimension(0, 32));
+        lblLastName.setPreferredSize(new java.awt.Dimension(42, 32));
 
-        jTextField2.setBackground(new java.awt.Color(239, 243, 150));
-        jTextField2.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(33, 28, 106));
-        jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField2.setText("bennamrouche");
-        jTextField2.setMaximumSize(new java.awt.Dimension(2147483647, 28));
-        jTextField2.setMinimumSize(new java.awt.Dimension(0, 28));
-        jTextField2.setPreferredSize(new java.awt.Dimension(127, 28));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtLastName.setBackground(new java.awt.Color(239, 243, 150));
+        txtLastName.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        txtLastName.setForeground(new java.awt.Color(33, 28, 106));
+        txtLastName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtLastName.setText("bennamrouche");
+        txtLastName.setMaximumSize(new java.awt.Dimension(2147483647, 28));
+        txtLastName.setMinimumSize(new java.awt.Dimension(0, 28));
+        txtLastName.setPreferredSize(new java.awt.Dimension(127, 28));
+        txtLastName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtLastNameActionPerformed(evt);
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel9.setText("UserName");
-        jLabel9.setMaximumSize(new java.awt.Dimension(444, 32));
-        jLabel9.setMinimumSize(new java.awt.Dimension(0, 32));
-        jLabel9.setPreferredSize(new java.awt.Dimension(42, 32));
+        lblUserName.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        lblUserName.setForeground(new java.awt.Color(239, 243, 150));
+        lblUserName.setText("UserName");
+        lblUserName.setMaximumSize(new java.awt.Dimension(444, 32));
+        lblUserName.setMinimumSize(new java.awt.Dimension(0, 32));
+        lblUserName.setPreferredSize(new java.awt.Dimension(42, 32));
 
-        jTextField3.setBackground(new java.awt.Color(239, 243, 150));
-        jTextField3.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(33, 28, 106));
-        jTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField3.setText("mehdi");
-        jTextField3.setMaximumSize(new java.awt.Dimension(2147483647, 40));
-        jTextField3.setMinimumSize(new java.awt.Dimension(0, 40));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtEmail.setBackground(new java.awt.Color(239, 243, 150));
+        txtEmail.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(33, 28, 106));
+        txtEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEmail.setText("mehdi");
+        txtEmail.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        txtEmail.setMinimumSize(new java.awt.Dimension(0, 40));
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtEmailActionPerformed(evt);
             }
         });
 
-        jTextField4.setBackground(new java.awt.Color(239, 243, 150));
-        jTextField4.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(33, 28, 106));
-        jTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField4.setText("mehdi");
-        jTextField4.setMaximumSize(new java.awt.Dimension(2147483647, 40));
-        jTextField4.setMinimumSize(new java.awt.Dimension(0, 40));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtUserName.setBackground(new java.awt.Color(239, 243, 150));
+        txtUserName.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        txtUserName.setForeground(new java.awt.Color(33, 28, 106));
+        txtUserName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtUserName.setText("mehdi");
+        txtUserName.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        txtUserName.setMinimumSize(new java.awt.Dimension(0, 40));
+        txtUserName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtUserNameActionPerformed(evt);
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel10.setText("Firat Name");
-        jLabel10.setMaximumSize(new java.awt.Dimension(444, 32));
-        jLabel10.setMinimumSize(new java.awt.Dimension(0, 32));
-        jLabel10.setPreferredSize(new java.awt.Dimension(42, 32));
+        lblFristName.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        lblFristName.setForeground(new java.awt.Color(239, 243, 150));
+        lblFristName.setText("Firat Name");
+        lblFristName.setMaximumSize(new java.awt.Dimension(444, 32));
+        lblFristName.setMinimumSize(new java.awt.Dimension(0, 32));
+        lblFristName.setPreferredSize(new java.awt.Dimension(42, 32));
 
-        jCheckBox1.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(239, 243, 150));
-        jCheckBox1.setText("Female");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        chxFemale.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        chxFemale.setForeground(new java.awt.Color(239, 243, 150));
+        chxFemale.setText("Female");
+        chxFemale.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                chxFemaleActionPerformed(evt);
             }
         });
 
-        jCheckBox2.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jCheckBox2.setForeground(new java.awt.Color(239, 243, 150));
-        jCheckBox2.setText("Male");
+        chxMale.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        chxMale.setForeground(new java.awt.Color(239, 243, 150));
+        chxMale.setText("Male");
 
         jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 22)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(239, 243, 150));
@@ -258,39 +271,39 @@ public class signUp extends javax.swing.JPanel {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jCheckBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(chxMale, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(chxFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(32, 32, 32)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(txtPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblForgetPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txtFristName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                                    .addComponent(lblFristName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel3Layout.createSequentialGroup()
                                             .addGap(6, 6, 6)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                            .addComponent(lblPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
@@ -304,37 +317,37 @@ public class signUp extends javax.swing.JPanel {
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblFristName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFristName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(chxMale, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(chxFemale, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblForgetPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10))
         );
 
@@ -343,55 +356,56 @@ public class signUp extends javax.swing.JPanel {
         add(mainContianer, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtFristNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFristNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtFristNameActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_txtPasswordActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtLastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLastNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtLastNameActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtUserNameActionPerformed
 
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    private void chxFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chxFemaleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
+    }//GEN-LAST:event_chxFemaleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup GenderGroup;
+    private javax.swing.JCheckBox chxFemale;
+    private javax.swing.JCheckBox chxMale;
     private javax.swing.JButton jButton1;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblForgetPassword;
+    private javax.swing.JLabel lblFristName;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblProgramIcon;
+    private javax.swing.JLabel lblProgramName;
+    private javax.swing.JLabel lblUserName;
     private javax.swing.JPanel leftSide;
     private javax.swing.JPanel mainContianer;
     private javax.swing.JPanel rigthSide;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtFristName;
+    private javax.swing.JTextField txtLastName;
+    private javax.swing.JPasswordField txtPassword;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }

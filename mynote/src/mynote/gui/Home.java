@@ -1,16 +1,37 @@
 package mynote.gui;
 import mynote.*;
+import mynote.Event.LabelMouseEvent;
 /**
  *
  * @author ebennamr
  */
 public class Home extends javax.swing.JPanel {
 
-    /**
-     * Creates new form login
-     */
+private  void Setup()
+{
+    LabelMouseEvent even = new LabelMouseEvent(Views.LOGIN);
+    lblLogout.addMouseMotionListener(even);
+    lblLogout.addMouseListener(even);
+    
+    
+      even = new LabelMouseEvent(Views.NEW_NOTE);
+    lblNewNote.addMouseMotionListener(even);
+    lblNewNote.addMouseListener(even);
+
+     even = new LabelMouseEvent(Views.PROFILE);
+    lblProfile.addMouseMotionListener(even);
+    lblProfile.addMouseListener(even);
+
+
+}
+
+
+
     public Home() {
         initComponents();
+        
+        
+        Setup();
     }
 
     /**
@@ -25,19 +46,19 @@ public class Home extends javax.swing.JPanel {
         mainContianer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         leftSide = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblAvatar = new javax.swing.JLabel();
+        lblUserName = new javax.swing.JLabel();
+        lblProgramIcon = new javax.swing.JLabel();
+        lblProgramName = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         MenuPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblProfile = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblNewNote = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lblLogout = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         NotePanelContainer = new javax.swing.JPanel();
         notePanel1 = new mynote.gui.notePanel();
@@ -83,31 +104,31 @@ public class Home extends javax.swing.JPanel {
 
         jPanel1.add(leftSide);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/avatar.png"))); // NOI18N
-        jPanel1.add(jLabel1);
+        lblAvatar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/avatar.png"))); // NOI18N
+        jPanel1.add(lblAvatar);
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("alphaben");
-        jLabel2.setMaximumSize(new java.awt.Dimension(120, 64));
-        jLabel2.setMinimumSize(new java.awt.Dimension(120, 64));
-        jLabel2.setPreferredSize(new java.awt.Dimension(64, 120));
-        jLabel2.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(jLabel2);
+        lblUserName.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
+        lblUserName.setForeground(new java.awt.Color(239, 243, 150));
+        lblUserName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUserName.setText("alphaben");
+        lblUserName.setMaximumSize(new java.awt.Dimension(120, 64));
+        lblUserName.setMinimumSize(new java.awt.Dimension(120, 64));
+        lblUserName.setPreferredSize(new java.awt.Dimension(64, 120));
+        lblUserName.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(lblUserName);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logo.png"))); // NOI18N
-        jPanel1.add(jLabel8);
+        lblProgramIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logo.png"))); // NOI18N
+        jPanel1.add(lblProgramIcon);
 
-        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("My Note");
-        jLabel9.setMaximumSize(new java.awt.Dimension(120, 64));
-        jLabel9.setMinimumSize(new java.awt.Dimension(120, 64));
-        jLabel9.setPreferredSize(new java.awt.Dimension(64, 120));
-        jLabel9.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(jLabel9);
+        lblProgramName.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
+        lblProgramName.setForeground(new java.awt.Color(239, 243, 150));
+        lblProgramName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProgramName.setText("My Note");
+        lblProgramName.setMaximumSize(new java.awt.Dimension(120, 64));
+        lblProgramName.setMinimumSize(new java.awt.Dimension(120, 64));
+        lblProgramName.setPreferredSize(new java.awt.Dimension(64, 120));
+        lblProgramName.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(lblProgramName);
 
         mainContianer.add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
@@ -133,10 +154,10 @@ public class Home extends javax.swing.JPanel {
         jLabel3.setMinimumSize(new java.awt.Dimension(20, 17));
         MenuPanel.add(jLabel3);
 
-        jLabel5.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/user.png"))); // NOI18N
-        jLabel5.setText("Profile");
-        MenuPanel.add(jLabel5);
+        lblProfile.setForeground(new java.awt.Color(239, 243, 150));
+        lblProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/user.png"))); // NOI18N
+        lblProfile.setText("Profile");
+        MenuPanel.add(lblProfile);
 
         jLabel10.setForeground(new java.awt.Color(239, 243, 150));
         jLabel10.setToolTipText("");
@@ -144,10 +165,10 @@ public class Home extends javax.swing.JPanel {
         jLabel10.setMinimumSize(new java.awt.Dimension(20, 17));
         MenuPanel.add(jLabel10);
 
-        jLabel6.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/new.png"))); // NOI18N
-        jLabel6.setText("New");
-        MenuPanel.add(jLabel6);
+        lblNewNote.setForeground(new java.awt.Color(239, 243, 150));
+        lblNewNote.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/new.png"))); // NOI18N
+        lblNewNote.setText("New");
+        MenuPanel.add(lblNewNote);
 
         jLabel11.setForeground(new java.awt.Color(239, 243, 150));
         jLabel11.setToolTipText("");
@@ -155,13 +176,13 @@ public class Home extends javax.swing.JPanel {
         jLabel11.setMinimumSize(new java.awt.Dimension(130, 17));
         MenuPanel.add(jLabel11);
 
-        jLabel12.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logout.png"))); // NOI18N
-        jLabel12.setText("logout");
-        jLabel12.setMaximumSize(new java.awt.Dimension(120, 32));
-        jLabel12.setMinimumSize(new java.awt.Dimension(120, 32));
-        MenuPanel.add(jLabel12);
+        lblLogout.setForeground(new java.awt.Color(239, 243, 150));
+        lblLogout.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logout.png"))); // NOI18N
+        lblLogout.setText("logout");
+        lblLogout.setMaximumSize(new java.awt.Dimension(120, 32));
+        lblLogout.setMinimumSize(new java.awt.Dimension(120, 32));
+        MenuPanel.add(lblLogout);
 
         NotePanelContainer.setBackground(new java.awt.Color(239, 243, 150));
         NotePanelContainer.setMaximumSize(new java.awt.Dimension(400, 360));
@@ -215,20 +236,20 @@ public class Home extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MenuPanel;
     private javax.swing.JPanel NotePanelContainer;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblAvatar;
+    private javax.swing.JLabel lblLogout;
+    private javax.swing.JLabel lblNewNote;
+    private javax.swing.JLabel lblProfile;
+    private javax.swing.JLabel lblProgramIcon;
+    private javax.swing.JLabel lblProgramName;
+    private javax.swing.JLabel lblUserName;
     private javax.swing.JPanel leftSide;
     private javax.swing.JPanel mainContianer;
     private mynote.gui.notePanel notePanel1;

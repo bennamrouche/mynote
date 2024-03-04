@@ -1,16 +1,28 @@
 package mynote.gui;
 import mynote.*;
+import mynote.Event.LabelMouseEvent;
 /**
  *
  * @author ebennamr
  */
 public class ForgetPassword extends javax.swing.JPanel {
 
-    /**
-     * Creates new form login
-     */
+      private  void Setup()
+{
+    LabelMouseEvent even = new LabelMouseEvent(Views.SIGN_UP);
+    lblSignUp.addMouseMotionListener(even);
+    lblSignUp.addMouseListener(even);
+    
+    
+      even = new LabelMouseEvent(Views.LOGIN);
+    lblLogin.addMouseMotionListener(even);
+    lblLogin.addMouseListener(even);
+
+    
+}
     public ForgetPassword() {
         initComponents();
+        Setup();
     }
 
     /**
@@ -27,13 +39,13 @@ public class ForgetPassword extends javax.swing.JPanel {
         mainContianer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblProgramIcon = new javax.swing.JLabel();
+        lblProgramName = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblSignUp = new javax.swing.JLabel();
+        lblLogin = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -89,18 +101,18 @@ public class ForgetPassword extends javax.swing.JPanel {
         jLabel3.setMaximumSize(new java.awt.Dimension(100, 0));
         jPanel1.add(jLabel3);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logo.png"))); // NOI18N
-        jPanel1.add(jLabel1);
+        lblProgramIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logo.png"))); // NOI18N
+        jPanel1.add(lblProgramIcon);
 
-        jLabel2.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("My Note");
-        jLabel2.setMaximumSize(new java.awt.Dimension(120, 64));
-        jLabel2.setMinimumSize(new java.awt.Dimension(120, 64));
-        jLabel2.setPreferredSize(new java.awt.Dimension(64, 120));
-        jLabel2.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(jLabel2);
+        lblProgramName.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
+        lblProgramName.setForeground(new java.awt.Color(239, 243, 150));
+        lblProgramName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProgramName.setText("My Note");
+        lblProgramName.setMaximumSize(new java.awt.Dimension(120, 64));
+        lblProgramName.setMinimumSize(new java.awt.Dimension(120, 64));
+        lblProgramName.setPreferredSize(new java.awt.Dimension(64, 120));
+        lblProgramName.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(lblProgramName);
 
         mainContianer.add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
@@ -119,15 +131,15 @@ public class ForgetPassword extends javax.swing.JPanel {
         jButton1.setForeground(new java.awt.Color(33, 28, 106));
         jButton1.setText("Log In");
 
-        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Sign Up");
+        lblSignUp.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        lblSignUp.setForeground(new java.awt.Color(239, 243, 150));
+        lblSignUp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSignUp.setText("Sign Up");
 
-        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Login");
+        lblLogin.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
+        lblLogin.setForeground(new java.awt.Color(239, 243, 150));
+        lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogin.setText("Login");
 
         jTextField3.setBackground(new java.awt.Color(239, 243, 150));
         jTextField3.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
@@ -173,9 +185,9 @@ public class ForgetPassword extends javax.swing.JPanel {
                     .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39))
         );
         jPanel3Layout.setVerticalGroup(
@@ -191,8 +203,8 @@ public class ForgetPassword extends javax.swing.JPanel {
                 .addComponent(jButton1)
                 .addGap(36, 36, 36)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(86, 86, 86))
@@ -210,17 +222,17 @@ public class ForgetPassword extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField3;
+    private javax.swing.JLabel lblLogin;
+    private javax.swing.JLabel lblProgramIcon;
+    private javax.swing.JLabel lblProgramName;
+    private javax.swing.JLabel lblSignUp;
     private javax.swing.JPanel leftSide;
     private javax.swing.JPanel mainContianer;
     private javax.swing.JPanel rigthSide;

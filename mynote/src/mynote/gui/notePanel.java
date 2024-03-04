@@ -22,7 +22,8 @@ public class notePanel extends javax.swing.JPanel implements
     public notePanel() {
         initComponents();
         addComponentListener(this);
-   
+    
+     
     
         
     }
@@ -77,7 +78,7 @@ public class notePanel extends javax.swing.JPanel implements
     @Override
     public void componentResized(ComponentEvent e) 
     {
-
+            
         int width = (getWidth() - 80) / 2;
         if (width < 100)
              return;
@@ -89,7 +90,7 @@ public class notePanel extends javax.swing.JPanel implements
         txtTitle.setMinimumSize(new Dimension(width, txtTitle.getMaximumSize().height));
         txtTitle.setMaximumSize(new Dimension(width, txtTitle.getMaximumSize().height));
      
-                System.err.println("resize Component ***");
+             
     }
 
     @Override

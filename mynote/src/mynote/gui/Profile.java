@@ -1,16 +1,27 @@
 package mynote.gui;
 import mynote.*;
-/**
- *
- * @author ebennamr
- */
+import mynote.Event.LabelMouseEvent;
+
 public class Profile extends javax.swing.JPanel {
 
-    /**
-     * Creates new form login
-     */
+
+    
+    
+    
+    private  void Setup()
+{
+    LabelMouseEvent even = new LabelMouseEvent(Views.HOME);
+    lblBack.addMouseMotionListener(even);
+    lblBack.addMouseListener(even);
+    
+  
+
+
+}
+
     public Profile() {
         initComponents();
+         Setup();
     }
 
     /**
@@ -25,9 +36,9 @@ public class Profile extends javax.swing.JPanel {
         mainContianer = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         leftSide = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        lblBack = new javax.swing.JLabel();
+        lblProgramIcon = new javax.swing.JLabel();
+        lblProgramName = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         lblProfileIcon = new javax.swing.JLabel();
         InfoPanel = new javax.swing.JPanel();
@@ -75,29 +86,29 @@ public class Profile extends javax.swing.JPanel {
 
         jPanel1.add(leftSide);
 
-        jLabel10.setFont(new java.awt.Font("Helvetica Neue", 0, 26)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/back.png"))); // NOI18N
-        jLabel10.setText("Back");
-        jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jLabel10.setMaximumSize(new java.awt.Dimension(120, 40));
-        jLabel10.setMinimumSize(new java.awt.Dimension(120, 40));
-        jLabel10.setPreferredSize(new java.awt.Dimension(120, 40));
-        jPanel1.add(jLabel10);
+        lblBack.setFont(new java.awt.Font("Helvetica Neue", 0, 26)); // NOI18N
+        lblBack.setForeground(new java.awt.Color(239, 243, 150));
+        lblBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/back.png"))); // NOI18N
+        lblBack.setText("Back");
+        lblBack.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        lblBack.setMaximumSize(new java.awt.Dimension(120, 40));
+        lblBack.setMinimumSize(new java.awt.Dimension(120, 40));
+        lblBack.setPreferredSize(new java.awt.Dimension(120, 40));
+        jPanel1.add(lblBack);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logo.png"))); // NOI18N
-        jPanel1.add(jLabel8);
+        lblProgramIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logo.png"))); // NOI18N
+        jPanel1.add(lblProgramIcon);
 
-        jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("My Note");
-        jLabel9.setMaximumSize(new java.awt.Dimension(120, 64));
-        jLabel9.setMinimumSize(new java.awt.Dimension(120, 64));
-        jLabel9.setPreferredSize(new java.awt.Dimension(64, 120));
-        jLabel9.setVerifyInputWhenFocusTarget(false);
-        jPanel1.add(jLabel9);
+        lblProgramName.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
+        lblProgramName.setForeground(new java.awt.Color(239, 243, 150));
+        lblProgramName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProgramName.setText("My Note");
+        lblProgramName.setMaximumSize(new java.awt.Dimension(120, 64));
+        lblProgramName.setMinimumSize(new java.awt.Dimension(120, 64));
+        lblProgramName.setPreferredSize(new java.awt.Dimension(64, 120));
+        lblProgramName.setVerifyInputWhenFocusTarget(false);
+        jPanel1.add(lblProgramName);
 
         mainContianer.add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
@@ -188,7 +199,6 @@ public class Profile extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel InfoPanel;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -199,11 +209,12 @@ public class Profile extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblBack;
     private javax.swing.JLabel lblProfileIcon;
+    private javax.swing.JLabel lblProgramIcon;
+    private javax.swing.JLabel lblProgramName;
     private javax.swing.JPanel leftSide;
     private javax.swing.JPanel mainContianer;
     // End of variables declaration//GEN-END:variables

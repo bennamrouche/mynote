@@ -1,16 +1,24 @@
 package mynote.gui;
 import mynote.*;
+import mynote.Event.LabelMouseEvent;
 /**
  *
  * @author ebennamr
  */
 public class NewNote extends javax.swing.JPanel {
 
-    /**
-     * Creates new form login
-     */
-    public NewNote() {
+           private  void Setup()
+{
+    LabelMouseEvent even = new LabelMouseEvent(Views.HOME);
+    lblBack.addMouseMotionListener(even);
+    lblBack.addMouseListener(even);
+   
+}
+           
+    public NewNote() 
+    {
         initComponents();
+        Setup();
     }
 
     /**
@@ -54,8 +62,8 @@ public class NewNote extends javax.swing.JPanel {
         rigthSide2 = new javax.swing.JPanel();
         mainContianer2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        lblBack = new javax.swing.JLabel();
+        lblProgramIcon = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
@@ -404,19 +412,19 @@ public class NewNote extends javax.swing.JPanel {
         jPanel7.setPreferredSize(new java.awt.Dimension(443, 66));
         jPanel7.setLayout(new javax.swing.BoxLayout(jPanel7, javax.swing.BoxLayout.LINE_AXIS));
 
-        jLabel7.setFont(new java.awt.Font("Helvetica Neue", 0, 26)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/back.png"))); // NOI18N
-        jLabel7.setText("Back");
-        jLabel7.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jLabel7.setMaximumSize(new java.awt.Dimension(120, 40));
-        jLabel7.setMinimumSize(new java.awt.Dimension(120, 40));
-        jLabel7.setPreferredSize(new java.awt.Dimension(120, 40));
-        jPanel7.add(jLabel7);
+        lblBack.setFont(new java.awt.Font("Helvetica Neue", 0, 26)); // NOI18N
+        lblBack.setForeground(new java.awt.Color(239, 243, 150));
+        lblBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/back.png"))); // NOI18N
+        lblBack.setText("Back");
+        lblBack.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        lblBack.setMaximumSize(new java.awt.Dimension(120, 40));
+        lblBack.setMinimumSize(new java.awt.Dimension(120, 40));
+        lblBack.setPreferredSize(new java.awt.Dimension(120, 40));
+        jPanel7.add(lblBack);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logo.png"))); // NOI18N
-        jPanel7.add(jLabel8);
+        lblProgramIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/logo.png"))); // NOI18N
+        jPanel7.add(lblProgramIcon);
 
         jLabel9.setFont(new java.awt.Font("Helvetica Neue", 1, 26)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(239, 243, 150));
@@ -533,8 +541,6 @@ public class NewNote extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -553,6 +559,8 @@ public class NewNote extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JLabel lblBack;
+    private javax.swing.JLabel lblProgramIcon;
     private javax.swing.JPanel leftSide;
     private javax.swing.JPanel leftSide1;
     private javax.swing.JPanel leftSide2;

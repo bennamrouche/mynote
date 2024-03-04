@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package mynote.gui;
 
 /**
@@ -10,10 +7,15 @@ package mynote.gui;
  */
 public class Frame extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Frame
-     */
-    public Frame() {
+    private  static  Frame instance  = null; 
+   public static Frame getInstance()
+   {
+        if(instance == null)
+            instance = new Frame();
+        return instance;
+   }
+   
+    private  Frame() {
         initComponents();
     }
 
