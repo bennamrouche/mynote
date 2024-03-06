@@ -84,7 +84,7 @@ public class SignUpData implements DataBaseQuery
             FirstName 
             +"', '" + 
             LastName + 
-            "', ' "+ 
+            "', '"+ 
             Password
             +"', 0, '"
             + Email+ "', '"+ Gender +"');";

@@ -14,10 +14,10 @@ public class Mynote {
 //     * @param args the command line arguments
 //     */
    public static void main(String[] args) {
-        JFrame frame =  Frame.getInstance();
+        Frame frame =  Frame.getInstance();
          System.out.print("out Print");
    //  frame.getContentPane().setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
-       frame.setContentPane(Views.getViewById(Views.SIGN_UP));
+       frame.SetView(Views.SIGN_UP);
       // frame.add(new notePanel());
            frame.validate();
           frame.setVisible(true);

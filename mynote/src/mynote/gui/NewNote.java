@@ -5,7 +5,7 @@ import mynote.Event.LabelMouseEvent;
  *
  * @author ebennamr
  */
-public class NewNote extends javax.swing.JPanel {
+public class NewNote extends javax.swing.JPanel implements updatableView{
 
            private  void Setup()
 {
@@ -67,10 +67,10 @@ public class NewNote extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jButton3 = new javax.swing.JButton();
-        jTextField5 = new javax.swing.JTextField();
+        txtTitle = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        txtContent = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(33, 28, 106));
         setForeground(CONST.SECONDARY_COLLOR);
@@ -445,17 +445,17 @@ public class NewNote extends javax.swing.JPanel {
         jButton3.setForeground(new java.awt.Color(33, 28, 106));
         jButton3.setText("Seve");
 
-        jTextField5.setBackground(new java.awt.Color(239, 243, 150));
-        jTextField5.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(33, 28, 106));
-        jTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField5.setText("my first Day");
-        jTextField5.setMaximumSize(new java.awt.Dimension(2147483647, 40));
-        jTextField5.setMinimumSize(new java.awt.Dimension(0, 40));
-        jTextField5.setPreferredSize(new java.awt.Dimension(64, 40));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtTitle.setBackground(new java.awt.Color(239, 243, 150));
+        txtTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        txtTitle.setForeground(new java.awt.Color(33, 28, 106));
+        txtTitle.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtTitle.setText("my first Day");
+        txtTitle.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        txtTitle.setMinimumSize(new java.awt.Dimension(0, 40));
+        txtTitle.setPreferredSize(new java.awt.Dimension(64, 40));
+        txtTitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtTitleActionPerformed(evt);
             }
         });
 
@@ -464,13 +464,13 @@ public class NewNote extends javax.swing.JPanel {
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("Title");
 
-        jTextArea3.setBackground(new java.awt.Color(239, 243, 150));
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextArea3.setForeground(new java.awt.Color(33, 28, 106));
-        jTextArea3.setRows(5);
-        jTextArea3.setText("to day i learn ");
-        jScrollPane3.setViewportView(jTextArea3);
+        txtContent.setBackground(new java.awt.Color(239, 243, 150));
+        txtContent.setColumns(20);
+        txtContent.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtContent.setForeground(new java.awt.Color(33, 28, 106));
+        txtContent.setRows(5);
+        txtContent.setText("to day i learn ");
+        jScrollPane3.setViewportView(txtContent);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -489,7 +489,7 @@ public class NewNote extends javax.swing.JPanel {
                     .addGroup(jPanel8Layout.createSequentialGroup()
                         .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 5, Short.MAX_VALUE))))
         );
         jPanel8Layout.setVerticalGroup(
@@ -498,7 +498,7 @@ public class NewNote extends javax.swing.JPanel {
                 .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(7, 7, 7)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 306, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -523,9 +523,9 @@ public class NewNote extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtTitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTitleActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtTitleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -555,10 +555,8 @@ public class NewNote extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     private javax.swing.JLabel lblBack;
     private javax.swing.JLabel lblProgramIcon;
     private javax.swing.JPanel leftSide;
@@ -570,5 +568,13 @@ public class NewNote extends javax.swing.JPanel {
     private javax.swing.JPanel rigthSide;
     private javax.swing.JPanel rigthSide1;
     private javax.swing.JPanel rigthSide2;
+    private javax.swing.JTextArea txtContent;
+    private javax.swing.JTextField txtTitle;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void updateView() {
+       txtTitle.setText("");
+       txtContent.setText("");
+    }
 }

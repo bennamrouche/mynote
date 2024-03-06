@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import mynote.User;
 
 
 
@@ -48,6 +49,9 @@ public class Handler
      return _handler;
            
    }
+ 
+   
+   
    
    public  boolean isConnected()
    {
@@ -64,14 +68,52 @@ public class Handler
            if(res.next())
                  throw new Exception("userName or Email not available");
           
-          return  stm.execute(data.getQuery());  
+        stm.execute(data.getQuery());  
+        System.out.print(data.getQuery());
        } catch (Exception ex) {
-           Logger.getLogger(Handler.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(Handler.class.getName()).log(Level.SEVERE, ex.getMessage());
             JOptionPane.showMessageDialog(null, ex.getMessage());
             return false;
        }
-      
+       return true;
      }
+   
+    public boolean Login(String userName, String Passowrd)
+    {
+        try {
+            
+                String Query = "SELECT * FROM user WHERE userName = '" + userName +"' and `password` = '" + Passowrd +"'" ;
+                Statement stm = con.createStatement();
+                ResultSet res;
+                res = stm.executeQuery(Query);
+               if(!res.next())
+                    throw new Exception("1 Wrong UserName or Password");
+               
+                User user = new User();
+                user.setAvatarId(res.getInt(User.AVTATAR_ID));
+                user.setEmail(res.getString(User.EMAIL));
+                user.setFirstName(res.getString(User.FIRST_NAME));
+                user.setLastName(res.getString(User.LAST_NAME));
+                user.setUserName(res.getString(User.USER_NAME));
+                user.setPassword(res.getString(User.PASSWORD));
+                user.setGender(res.getString(User.GENDER));
+                
+//                    if(!Passowrd.equals(user.getPassword())) 
+//                    {
+//                       
+//                        System.err.println("[" + Passowrd+"]");
+//                        System.err.print("[" + user.getPassword() +"]");
+//                         throw new Exception("2 Wrong UserName or Password");
+//                    }
+                    Global.currentUser = user;
+       } catch (Exception ex) {
+           Logger.getLogger(Handler.class.getName()).log(Level.SEVERE, ex.getMessage());
+           JOptionPane.showMessageDialog(null, ex.getMessage());
+           return false;
+       }
+        
+      return true;
+    }
     
     public boolean  ExcuteQuery()
     {

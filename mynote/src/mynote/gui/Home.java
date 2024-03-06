@@ -5,7 +5,7 @@ import mynote.Event.LabelMouseEvent;
  *
  * @author ebennamr
  */
-public class Home extends javax.swing.JPanel {
+public class Home extends javax.swing.JPanel implements updatableView{
 
 private  void Setup()
 {
@@ -262,4 +262,9 @@ private  void Setup()
     private mynote.gui.notePanel notePanel8;
     private mynote.gui.notePanel notePanel9;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void updateView() {
+       NotePanelContainer.removeAll();
+    }
 }

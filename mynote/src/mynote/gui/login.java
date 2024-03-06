@@ -2,16 +2,16 @@ package mynote.gui;
 import mynote.*;
 import mynote.Event.LabelMouseEvent;
 
-public class login extends javax.swing.JPanel {
+public class login extends javax.swing.JPanel implements updatableView{
 
-    private  void Setup()
+ private  void Setup()
 {
     LabelMouseEvent even = new LabelMouseEvent(Views.FORGET_PASSWORD);
     lblForgetPassword.addMouseMotionListener(even);
     lblForgetPassword.addMouseListener(even);
+
     
-    
-      even = new LabelMouseEvent(Views.SIGN_UP);
+    even = new LabelMouseEvent(Views.SIGN_UP);
     lblSignUp.addMouseMotionListener(even);
     lblSignUp.addMouseListener(even);
 
@@ -227,7 +227,15 @@ public class login extends javax.swing.JPanel {
     }//GEN-LAST:event_txtPasswordActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      Frame.getInstance().setContentPane(Views.getViewById(Views.HOME));
+
+      String userName = txtUserName.getText();
+      String Password =  String.valueOf(txtPassword.getPassword());
+       //************** < Valdiation >
+        // here
+       //************** < Valdiation >
+       boolean res = handlers.Handler.getHandler().Login(userName, Password);
+        if(res)
+           Frame.getInstance().SetView(Views.HOME);
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
@@ -248,4 +256,11 @@ public class login extends javax.swing.JPanel {
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void updateView()
+    {
+        txtUserName.setText("");
+        txtPassword.setText("");
+    }
 }

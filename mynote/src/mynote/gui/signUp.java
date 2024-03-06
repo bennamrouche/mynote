@@ -1,11 +1,10 @@
 package mynote.gui;
 import handlers.Handler;
 import handlers.SignUpData;
-import javax.swing.JOptionPane;
 import mynote.*;
 import mynote.Event.LabelMouseEvent;
 
-public class signUp extends javax.swing.JPanel {
+public class signUp extends javax.swing.JPanel implements updatableView {
 
 private  void Setup()
 {
@@ -17,6 +16,9 @@ private  void Setup()
       even = new LabelMouseEvent(Views.LOGIN);
     lblLogin.addMouseMotionListener(even);
     lblLogin.addMouseListener(even);
+    
+    GenderGroup.add(chxMale);
+    GenderGroup.add(chxFemale);
 
     
 }
@@ -417,10 +419,8 @@ private  void Setup()
         
              handlers.Handler hnd =  Handler.getHandler();
            SignUpResult =  hnd.SingUp(sup);
-           if(!SignUpResult)          
-              Frame.getInstance().setContentPane(Views.getViewById(Views.LOGIN));
-           else 
-                 Frame.getInstance().setContentPane(Views.getViewById(Views.LOGIN));
+           if(SignUpResult)          
+              Frame.getInstance().SetView(Views.LOGIN);
         
         System.err.println("ok ... ");
 
@@ -455,4 +455,16 @@ private  void Setup()
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void updateView()
+    {
+        txtFristName.setText("");
+        txtLastName.setText("");
+        txtUserName.setText("");
+        txtEmail.setText("");
+        txtPassword.setText("");
+        chxMale.setSelected(true);
+        
+    }
 }

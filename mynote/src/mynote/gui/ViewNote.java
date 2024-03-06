@@ -5,7 +5,7 @@ import mynote.Event.LabelMouseEvent;
  *
  * @author ebennamr
  */
-public class ViewNote extends javax.swing.JPanel {
+public class ViewNote extends javax.swing.JPanel  implements updatableView{
 
         private  void Setup()
 {
@@ -68,9 +68,9 @@ public class ViewNote extends javax.swing.JPanel {
         lblProgramIcon = new javax.swing.JLabel();
         lblProgramName = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
+        lblTitle = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
+        txtContent = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(33, 28, 106));
         setForeground(CONST.SECONDARY_COLLOR);
@@ -440,18 +440,18 @@ public class ViewNote extends javax.swing.JPanel {
 
         jPanel8.setOpaque(false);
 
-        jLabel13.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Title");
+        lblTitle.setFont(new java.awt.Font("Helvetica Neue", 1, 14)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(239, 243, 150));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("Title");
 
-        jTextArea3.setBackground(new java.awt.Color(239, 243, 150));
-        jTextArea3.setColumns(20);
-        jTextArea3.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jTextArea3.setForeground(new java.awt.Color(33, 28, 106));
-        jTextArea3.setRows(5);
-        jTextArea3.setText("to day i learn ");
-        jScrollPane3.setViewportView(jTextArea3);
+        txtContent.setBackground(new java.awt.Color(239, 243, 150));
+        txtContent.setColumns(20);
+        txtContent.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        txtContent.setForeground(new java.awt.Color(33, 28, 106));
+        txtContent.setRows(5);
+        txtContent.setText("to day i learn ");
+        jScrollPane3.setViewportView(txtContent);
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -461,13 +461,13 @@ public class ViewNote extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
+                .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(16, 16, 16))
@@ -497,7 +497,6 @@ public class ViewNote extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -516,12 +515,12 @@ public class ViewNote extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lblBack;
     private javax.swing.JLabel lblProgramIcon;
     private javax.swing.JLabel lblProgramName;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JPanel leftSide;
     private javax.swing.JPanel leftSide1;
     private javax.swing.JPanel leftSide2;
@@ -531,5 +530,13 @@ public class ViewNote extends javax.swing.JPanel {
     private javax.swing.JPanel rigthSide;
     private javax.swing.JPanel rigthSide1;
     private javax.swing.JPanel rigthSide2;
+    private javax.swing.JTextArea txtContent;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void updateView() 
+    {
+        txtContent.setText("for testing now");
+        lblTitle.setText("for testing now");
+    }
 }

@@ -1,22 +1,20 @@
 package mynote.gui;
+import handlers.Global;
 import mynote.*;
 import mynote.Event.LabelMouseEvent;
 
-public class Profile extends javax.swing.JPanel {
+public class Profile extends javax.swing.JPanel implements updatableView{
 
 
     
     
     
-    private  void Setup()
+public  void Setup()
 {
     LabelMouseEvent even = new LabelMouseEvent(Views.HOME);
     lblBack.addMouseMotionListener(even);
     lblBack.addMouseListener(even);
-    
-  
-
-
+   
 }
 
     public Profile() {
@@ -43,15 +41,15 @@ public class Profile extends javax.swing.JPanel {
         lblProfileIcon = new javax.swing.JLabel();
         InfoPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblFirstName = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblLastName = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        lblUserName = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        lblGender = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(33, 28, 106));
         setForeground(CONST.SECONDARY_COLLOR);
@@ -125,50 +123,50 @@ public class Profile extends javax.swing.JPanel {
         jLabel3.setText("FirstName");
         InfoPanel.add(jLabel3);
 
-        jLabel4.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel4.setText("El Mehdi");
-        InfoPanel.add(jLabel4);
+        lblFirstName.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        lblFirstName.setForeground(new java.awt.Color(239, 243, 150));
+        lblFirstName.setText("El Mehdi");
+        InfoPanel.add(lblFirstName);
 
         jLabel5.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(239, 243, 150));
         jLabel5.setText("last Name");
         InfoPanel.add(jLabel5);
 
-        jLabel6.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel6.setText("Bennamrouche");
-        InfoPanel.add(jLabel6);
+        lblLastName.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        lblLastName.setForeground(new java.awt.Color(239, 243, 150));
+        lblLastName.setText("Bennamrouche");
+        InfoPanel.add(lblLastName);
 
         jLabel11.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(239, 243, 150));
         jLabel11.setText("UserName");
         InfoPanel.add(jLabel11);
 
-        jLabel12.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel12.setText("alphaben");
-        InfoPanel.add(jLabel12);
+        lblUserName.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        lblUserName.setForeground(new java.awt.Color(239, 243, 150));
+        lblUserName.setText("alphaben");
+        InfoPanel.add(lblUserName);
 
         jLabel13.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(239, 243, 150));
         jLabel13.setText("Email");
         InfoPanel.add(jLabel13);
 
-        jLabel14.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel14.setText("example. rout.data@gamil.com");
-        InfoPanel.add(jLabel14);
+        lblEmail.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(239, 243, 150));
+        lblEmail.setText("example. rout.data@gamil.com");
+        InfoPanel.add(lblEmail);
 
         jLabel15.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(239, 243, 150));
         jLabel15.setText("Gender");
         InfoPanel.add(jLabel15);
 
-        jLabel16.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(239, 243, 150));
-        jLabel16.setText("Male");
-        InfoPanel.add(jLabel16);
+        lblGender.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
+        lblGender.setForeground(new java.awt.Color(239, 243, 150));
+        lblGender.setText("Male");
+        InfoPanel.add(lblGender);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -200,22 +198,35 @@ public class Profile extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel InfoPanel;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblBack;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblFirstName;
+    private javax.swing.JLabel lblGender;
+    private javax.swing.JLabel lblLastName;
     private javax.swing.JLabel lblProfileIcon;
     private javax.swing.JLabel lblProgramIcon;
     private javax.swing.JLabel lblProgramName;
+    private javax.swing.JLabel lblUserName;
     private javax.swing.JPanel leftSide;
     private javax.swing.JPanel mainContianer;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void updateView() {
+   User us = Global.currentUser;
+    if ( us == null)
+        return;
+
+    lblEmail.setText(us.getEmail());
+    lblFirstName.setText(us.getFirstName());
+    lblGender.setText(us.getGender());
+    lblLastName.setText(us.getLastName());
+    lblUserName.setText(us.getUserName());
+    }
 }

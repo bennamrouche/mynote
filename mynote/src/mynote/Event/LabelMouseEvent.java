@@ -49,7 +49,7 @@ public class LabelMouseEvent extends MouseAdapter
         JComponent com = (JComponent)e.getSource();
           com.setForeground(orgine);
        if(next <= Views.MAX_ID)
-       Frame.getInstance().setContentPane(Views.getViewById(next));
-        Frame.getInstance().validate();
+       Frame.getInstance().SetView(next);
+     
     }
 }
