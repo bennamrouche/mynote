@@ -1,10 +1,10 @@
 package mynote.gui;
+import handlers.Handler;
+import handlers.SignUpData;
+import javax.swing.JOptionPane;
 import mynote.*;
 import mynote.Event.LabelMouseEvent;
-/**
- *
- * @author ebennamr
- */
+
 public class signUp extends javax.swing.JPanel {
 
 private  void Setup()
@@ -172,6 +172,11 @@ private  void Setup()
         jButton1.setFont(new java.awt.Font("Helvetica Neue", 0, 26)); // NOI18N
         jButton1.setForeground(new java.awt.Color(33, 28, 106));
         jButton1.setText("Log In");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         lblLogin.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         lblLogin.setForeground(new java.awt.Color(239, 243, 150));
@@ -215,7 +220,7 @@ private  void Setup()
         txtEmail.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         txtEmail.setForeground(new java.awt.Color(33, 28, 106));
         txtEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtEmail.setText("mehdi");
+        txtEmail.setText("example@gamil.com");
         txtEmail.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         txtEmail.setMinimumSize(new java.awt.Dimension(0, 40));
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +233,7 @@ private  void Setup()
         txtUserName.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         txtUserName.setForeground(new java.awt.Color(33, 28, 106));
         txtUserName.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtUserName.setText("mehdi");
+        txtUserName.setText("alphaben");
         txtUserName.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         txtUserName.setMinimumSize(new java.awt.Dimension(0, 40));
         txtUserName.addActionListener(new java.awt.event.ActionListener() {
@@ -255,6 +260,7 @@ private  void Setup()
 
         chxMale.setFont(new java.awt.Font("Helvetica Neue", 1, 16)); // NOI18N
         chxMale.setForeground(new java.awt.Color(239, 243, 150));
+        chxMale.setSelected(true);
         chxMale.setText("Male");
 
         jLabel11.setFont(new java.awt.Font("Helvetica Neue", 1, 22)); // NOI18N
@@ -295,15 +301,13 @@ private  void Setup()
                                     .addComponent(lblUserName, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
                                     .addComponent(lblFristName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                            .addGap(6, 6, 6)
-                                            .addComponent(lblPassword, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
-                                        .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(lblLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(lblPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
@@ -379,6 +383,49 @@ private  void Setup()
     private void chxFemaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chxFemaleActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_chxFemaleActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     
+        String FirstName; 
+        String LastName;
+        String UserName;
+        String Password;
+        String Email;
+        String Gender;
+        SignUpData sup;
+        boolean SignUpResult;
+        
+        FirstName   =  txtFristName.getText();
+        LastName    =  txtLastName.getText();
+        UserName    =  txtUserName.getText();
+        Email       =  txtEmail.getText();
+        Password    =  String.copyValueOf(txtPassword.getPassword());
+        Gender      =  chxMale.isSelected() ? "M" : "F";
+        
+        // *********** validation of values **************
+        // 
+        // *********** end  **************
+        
+        sup = new SignUpData()
+                .setFirstName(FirstName)
+                .setLastName(LastName)
+                .setUserName(UserName)
+                .setPassword(Password)
+                .setEmail(Email)
+               .setGender(Gender);
+        
+        
+             handlers.Handler hnd =  Handler.getHandler();
+           SignUpResult =  hnd.SingUp(sup);
+           if(!SignUpResult)          
+              Frame.getInstance().setContentPane(Views.getViewById(Views.LOGIN));
+           else 
+                 Frame.getInstance().setContentPane(Views.getViewById(Views.LOGIN));
+        
+        System.err.println("ok ... ");
+
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

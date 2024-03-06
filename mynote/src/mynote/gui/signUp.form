@@ -204,17 +204,14 @@
                                           <Component id="lblFristName" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="txtLastName" min="-2" pref="217" max="-2" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                                  <Component id="lblPassword" max="32767" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="txtLastName" min="-2" pref="217" max="-2" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="lblLastName" alignment="0" min="-2" pref="221" max="-2" attributes="0"/>
+                                                  <Component id="lblPassword" alignment="1" max="32767" attributes="0"/>
                                               </Group>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
-                                              <Component id="lblLastName" min="-2" pref="221" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -383,6 +380,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Log In"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblLogin">
               <Properties>
@@ -487,7 +487,7 @@
                   <Color blue="6a" green="1c" red="21" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="mehdi"/>
+                <Property name="text" type="java.lang.String" value="example@gamil.com"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[2147483647, 40]"/>
                 </Property>
@@ -511,7 +511,7 @@
                   <Color blue="6a" green="1c" red="21" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="mehdi"/>
+                <Property name="text" type="java.lang.String" value="alphaben"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[2147483647, 40]"/>
                 </Property>
@@ -565,6 +565,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="96" green="f3" red="ef" type="rgb"/>
                 </Property>
+                <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Male"/>
               </Properties>
             </Component>
