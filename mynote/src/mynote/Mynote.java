@@ -1,6 +1,8 @@
 package mynote;
 
 import handlers.Handler;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import javax.swing.JFrame;
 import mynote.gui.Frame;
 import mynote.gui.Home;
@@ -25,7 +27,7 @@ public class Mynote {
           System.out.print("out Print");
 
         System.err.println(Views.FORGET_PASSWORD);   
-       
+    
     }
     
 }
