@@ -308,6 +308,9 @@
                       <Dimension value="[120, 32]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLogoutMouseClicked"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

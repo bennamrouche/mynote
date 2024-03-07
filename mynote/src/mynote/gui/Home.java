@@ -1,4 +1,5 @@
 package mynote.gui;
+import handlers.Global;
 import mynote.*;
 import mynote.Event.LabelMouseEvent;
 /**
@@ -182,6 +183,11 @@ private  void Setup()
         lblLogout.setText("logout");
         lblLogout.setMaximumSize(new java.awt.Dimension(120, 32));
         lblLogout.setMinimumSize(new java.awt.Dimension(120, 32));
+        lblLogout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLogoutMouseClicked(evt);
+            }
+        });
         MenuPanel.add(lblLogout);
 
         NotePanelContainer.setBackground(new java.awt.Color(239, 243, 150));
@@ -232,6 +238,16 @@ private  void Setup()
         add(mainContianer, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void lblLogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLogoutMouseClicked
+     
+      Session.DeleteCurrentSession();
+      handlers.Handler.getHandler().DeleteSession(Global.Session.getSessionId());
+      
+      Global.CurrentNote = null;
+      Global.Session = null;
+      Global.CurrentNote = null;
+    }//GEN-LAST:event_lblLogoutMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel MenuPanel;
@@ -264,7 +280,27 @@ private  void Setup()
     // End of variables declaration//GEN-END:variables
 
     @Override
-    public void updateView() {
+    public void updateView() 
+    {
        NotePanelContainer.removeAll();
+       Note.notes.clear();
+       if(Global.Session == null)
+       {
+            if (Session.isSessionFileExsists())
+                handlers.Handler.getHandler().LoadSession(Session.getSessionID());
+            else 
+                Frame.getInstance().SetView(Views.LOGIN);    
+       }
+       
+        handlers.Handler.getHandler().FillNote();
+         for( Note note : Note.notes)
+         {
+             NotePanelContainer.add(new notePanel(note));
+         }
+         
+         NotePanelContainer.validate();
+         jScrollPane1.getVerticalScrollBar().setValue(0);
+         jScrollPane1.getVerticalScrollBar().setValue(100);
+         jScrollPane1.getVerticalScrollBar().setValue(0);
     }
 }
